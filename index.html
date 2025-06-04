@@ -10,25 +10,34 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center">Conversor de Temperatura</h1>
+      <form>
+        <h1 class="text-center">Conversor de Temperatura</h1>
 
-      <div>
-        <label class="form-label" for="tempC">Temp. °C</label>
-        <input class="form-control" type="number" id="tempC" />
-      </div>
+        <div>
+          <label class="form-label" for="tempC">Temp. °C</label>
+          <input class="form-control" type="number" id="tempC" />
+        </div>
 
-      <div>
-        <button class="btn btn-primary" onclick="converter()">
-          Fahrenheit
-        </button>
-      </div>
+        <div class="mt-3">
+          <button class="btn btn-secondary" type="reset" onclick="limpar()">
+            Limpar
+          </button>
+          <button class="btn btn-primary" type="button" onclick="converter(`f`)">
+            Fahrenheit
+          </button>
+            <button class="btn btn-success" type="button" onclick="converter(`k`)">
+            Kelvin
+          </button>
+        </div>
 
-      <div class="resultado">
-        <span id="resultado">Temp Fahrenheit</span>
-      </div>
+        <div class="resultado mt-3">
+          <span id="resultado"></span>
+        </div>
+      </form>
     </div>
 
     <script
