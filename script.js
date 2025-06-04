@@ -11,19 +11,19 @@ function convertCtoK(tempC) {
 
 function converter(temp) {
     let tempC = document.getElementById("tempC").value.trim() === "" ? 0 : parseFloat(document.getElementById("tempC").value);
+    let resultado = 0;
 
     if (temp === "k") {
-        const resultadok = convertCtoK(tempC);
-        document.getElementsByClassName("resultado")[0].style.display = 'flex';
-        return document.getElementById("resultado").innerHTML = ` ${resultadok} °K`;
+        resultado = convertCtoK(tempC);
     }else if (temp === "f") {
-        const resultadof = converterCtoF(tempC);
-        document.getElementsByClassName("resultado")[0].style.display = 'flex';
-        return document.getElementById("resultado").innerHTML = ` ${resultadof} °F`;
+        resultado = converterCtoF(tempC);
     } else {
         alert("Selecione uma opção válida.");
         return;
     }
+    
+    document.getElementsByClassName("resultado")[0].style.display = 'flex';
+    document.getElementById("resultado").innerHTML = ` ${resultado} ${temp}`;
 }
 
 function limpar() {
